@@ -1,6 +1,6 @@
 /* eslint react-hooks/exhaustive-deps: off */
 import React, { useEffect, useState } from "react";
-import ColorfulMessage from "./components/ColorfulMessage";
+import { ColorfulMessage } from "./components/ColorfulMessage";
 
 const App = () => {
   const [faceShowFlag, setFaceShowFlag] = useState(false);
@@ -19,6 +19,8 @@ const App = () => {
     console.log("初回のみ実行");
   }, []);
 
+  // 関心の分離
+  // numの値が変化した時だけ実行される
   useEffect(() => {
     if (num > 0) {
       if (num % 3 === 0) {
